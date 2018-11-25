@@ -125,6 +125,7 @@ while risp != 'n':
                 else:
                     print("Nope. Try again next time")
                     error_count = error_count + 1
+                    status = True
 
             elif risp2 == 'y':
                 letter = input("What letter are you looking for?\n")
