@@ -1,0 +1,18 @@
+***pyInstaller: convert Python script (.py) into Windows executable (.exe)
+
+Instructions:
+
+1) install pyInstaller package. Open the cmd and run:
+
+  pip install pyinstaller
+
+2) go to the directory where resides the Python script you want to convert (use "cd <path>")
+  On the cmd, run:
+
+  pyinstaller -F yourprogram.py
+
+  some directory is then generated. You can find the executable file under the "dist" directory
+  NOTE: the "-F" options allows you to create one single .exe file under the "dist" directory (otherwise, multiple files would be generated)
+  NOTE: you can move the file outside the "dist" directory and it will work
+  NOTE: when running the executable, the output window is automatically closed as soon as the Python script ends its tasks.
+        To keep the window open, insert "input("Press Enter to continue...") at the end of your Python script
