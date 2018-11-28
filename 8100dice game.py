@@ -456,7 +456,7 @@ while game_on:
 
             sleep(1)
 
-            print("Player 2, is your turn now.\n")
+            print("Player 3, is your turn now.\n")
 
             sleep(2)
 
