@@ -78,8 +78,10 @@ while game_on:
                 else:
                     print("You got " + str(p1_throw[0]) +
                           " points and u still got " + str(p1_throw[1]) + " dices to throw\n")
+                    sleep(1)
                     p1_hand.point = p1_hand.point + p1_throw[0]
                     p1_hand.remaining_dice = p1_throw[1]
+                    print("You now have "+str(p1_hand.point)+" this hand.")
 
                     sleep(2)
 
@@ -130,6 +132,7 @@ while game_on:
                         bot_throw[0]) + " points and I still got " + str(bot_throw[1]) + " dices to throw\n")
                     Bot_hand.point = Bot_hand.point + bot_throw[0]
                     Bot_hand.remaining_dice = bot_throw[1]
+                    print("I now have " + str(Bot_hand.point) + " this hand.")
 
                     sleep(2)
 
@@ -232,6 +235,8 @@ while game_on:
                           " points and u still got " + str(p1_throw[1]) + " dices to throw\n")
                     p1_hand.point = p1_hand.point + p1_throw[0]
                     p1_hand.remaining_dice = p1_throw[1]
+                    sleep(1)
+                    print("You now have " + str(p1_hand.point) + " this hand.")
 
                     sleep(2)
 
@@ -281,6 +286,8 @@ while game_on:
                           " points and u still got " + str(p2_throw[1]) + " dices to throw\n")
                     p2_hand.point = p2_hand.point + p2_throw[0]
                     p2_hand.remaining_dice = p2_throw[1]
+                    sleep(1)
+                    print("You now have " + str(p2_hand.point) + " this hand.")
 
                     sleep(2)
 
@@ -362,6 +369,8 @@ while game_on:
                 p1_throw_result = p1_hand.dicethrow(p1_hand.remaining_dice)  # tiro dei dadi
                 print("You threw " + str(p1_hand.remaining_dice) + " dices: " + str(p1_throw_result) + "\n")
                 p1_throw = p1_hand.throwpoint(p1_throw_result)  # calcolo del tiro
+                sleep(1)
+                print("You now have " + str(p1_hand.point) + " this hand.")
 
                 sleep(2)
 
@@ -427,6 +436,8 @@ while game_on:
                           " points and u still got " + str(p2_throw[1]) + " dices to throw\n")
                     p2_hand.point = p2_hand.point + p2_throw[0]
                     p2_hand.remaining_dice = p2_throw[1]
+                    sleep(1)
+                    print("You now have " + str(p2_hand.point) + " this hand.")
 
                     sleep(2)
 
@@ -478,6 +489,8 @@ while game_on:
                           " points and u still got " + str(p3_throw[1]) + " dices to throw\n")
                     p3_hand.point = p3_hand.point + p3_throw[0]
                     p3_hand.remaining_dice = p3_throw[1]
+                    sleep(1)
+                    print("You now have " + str(p3_hand.point) + " this hand.")
 
                     sleep(2)
 
