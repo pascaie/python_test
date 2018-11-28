@@ -136,10 +136,16 @@ while game_on:
 
                     sleep(2)
 
-                    if Bot_hand.point <= 300 and Bot_hand.remaining_dice < 5:
+                    if Bot_hand.point <= 600 and 1 < Bot_hand.remaining_dice < 5:
                         print("This amount of point does not satisfy me. I will keep throwing\n")
                     elif Bot_hand.remaining_dice == 5:
                         print("Surely i wont stop whit 5 new dices to throw.\n")
+                    elif Bot_hand.remaining_dice == 1:
+                        print("I think is not wise to throw only 1 dice. I will end here my turn.")
+                        Bot_hand.status = False
+                        Bot_player.tot_point_calculate(Bot_hand.point)
+                        Bot_hand.point = 0
+                        Bot_hand.remaining_dice = 5
                     elif Bot_hand.point > 600 and Bot_hand.remaining_dice <= 2:
                         print("mmm... I think this is a pretty good amount to stop. Your turn\n")
                         Bot_hand.status = False
