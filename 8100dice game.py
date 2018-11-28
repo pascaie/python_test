@@ -357,7 +357,7 @@ while game_on:
         p3_hand = Hand(5, 0, False)
         sleep(1)
 
-        while not player1.game_status and not player2.game_status:
+        while not player1.game_status and not player2.game_status and not player3.game_status:
 
             print("Player 1, is your turn.\n")
             p1_hand.status = True  # attiva la mano del giocatore di turno
@@ -369,8 +369,6 @@ while game_on:
                 p1_throw_result = p1_hand.dicethrow(p1_hand.remaining_dice)  # tiro dei dadi
                 print("You threw " + str(p1_hand.remaining_dice) + " dices: " + str(p1_throw_result) + "\n")
                 p1_throw = p1_hand.throwpoint(p1_throw_result)  # calcolo del tiro
-                sleep(1)
-                print("You now have " + str(p1_hand.point) + " this hand.")
 
                 sleep(2)
 
@@ -385,6 +383,8 @@ while game_on:
                           " points and u still got " + str(p1_throw[1]) + " dices to throw\n")
                     p1_hand.point = p1_hand.point + p1_throw[0]
                     p1_hand.remaining_dice = p1_throw[1]
+                    sleep(1)
+                    print("You now have " + str(p1_hand.point) + " this hand.")
 
                     sleep(2)
 
