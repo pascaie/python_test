@@ -2,8 +2,9 @@
 Libreria di classi e metodi definiti per il gioco 8100
 
 """
-
+from pathlib import Path
 import random
+
 
 # definizione del giocatore
 class Player:
@@ -94,3 +95,29 @@ class Hand:
     def calculate_hand_point(self, throw_point):
         self.point = self.point + throw_point
 
+
+def call_instruction():
+    instructions = Path("instructions.txt")
+    if instructions.exists():
+        instructions_content = open("instructions.txt", "r")
+        print(instructions_content.read())
+        instructions_content.close()
+    else:
+        instructions_content = open("instructions.txt", "w")
+        instructions_content.write("Welcome to the instructions of 8100.\n"
+                                   "It's a simple dice game. You throw 5 dices when is your turn and get some point "
+                                   "on the base of what combinations you get.\n"
+                                   "Every 5 is worth 50 points, every 1 is worth 100 points.\n"
+                                   "A tris is worth 100xdice number. Except a tris of 1 that is worth 1000 points.\n"
+                                   "A straight (5 dices on sequence) is worth 500 points.\n"
+                                   "Every dice that's not in a combinations can be thrown again; for example if you get"
+                                   "a straight you can throw again all 5 dices, instead if you get a tris and a 5"
+                                   "only one dice remain to be thrown.\n"
+                                   "But beware: if no combinations comes out the hand and every"
+                                   " point accumulated until that throw are lost and the player's turn is ended.\n"
+                                   "The first player to reach or top 8100 points is the winner.")
+        instructions_content.close()
+        instructions_content = open("instructions.txt", "r")
+        print(instructions_content.read())
+        instructions_content.close()
+        
