@@ -49,30 +49,36 @@ class Hand:
         if dices == [1, 2, 3, 4, 5] or dices == [2, 3, 4, 5, 6]:
             throw_point = throw_point + 500
             dices.clear()
-        elif dices.count(1) == 3:
+        elif dices.count(1) >= 3:
             throw_point = throw_point + 1000
-            while 1 in dices:
-                dices.remove(1)
-        elif dices.count(2) == 3:
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
+        elif dices.count(2) >= 3:
             throw_point = throw_point + 200
-            while 2 in dices:
-                dices.remove(2)
-        elif dices.count(3) == 3:
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
+        elif dices.count(3) >= 3:
             throw_point = throw_point + 300
-            while 3 in dices:
-                dices.remove(3)
-        elif dices.count(4) == 3:
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
+        elif dices.count(4) >= 3:
             throw_point = throw_point + 400
-            while 4 in dices:
-                dices.remove(4)
-        elif dices.count(5) == 3:
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
+        elif dices.count(5) >= 3:
             throw_point = throw_point + 500
-            while 5 in dices:
-                dices.remove(5)
-        elif dices.count(6) == 3:
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
+        elif dices.count(6) >= 3:
             throw_point = throw_point + 600
-            while 6 in dices:
-                dices.remove(6)
+            dices.sort(reverse=True)
+            for a in range(3):
+                dices.pop()
         elif dices.count(1) == 0 and dices.count(5) == 0:
             dices.clear()
             throw_status = False
@@ -120,4 +126,3 @@ def call_instruction():
         instructions_content = open("instructions.txt", "r")
         print(instructions_content.read())
         instructions_content.close()
-        
