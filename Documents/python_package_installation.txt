@@ -1,0 +1,14 @@
+Python package installation
+
+1st way) using "pip"
+  open the cmd and run the following command:
+
+  >pip install <package_name>
+  example: >pip install numpy
+
+2nd way) If you cannot run the pip command directly (possibly because the location where
+          it was installed isn’t on your operating system’s PATH) then you can run pip via
+          the Python interpreter:
+
+  >python -m pip <pip arguments>
+  example: >python -m pip install numpy
