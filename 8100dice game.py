@@ -22,7 +22,7 @@ if rule_ask == "n":
 
     sleep(5)
 
-sleep(1)
+sleep(0.5)
 
 play_ask = input("Do you want to play?(y/n)\n")
 
@@ -38,7 +38,7 @@ while game_on:
     # chiedi numero di giocatori
     players_number = int(input("How many players there are?(from 1 to 3)\n"))
 
-    sleep(2)
+    sleep(1)
 
     # 1 giocatore vs bot
     if players_number == 1:
@@ -73,6 +73,7 @@ while game_on:
                     p1_hand.status = False
                     p1_hand.point = 0
                     p1_hand.remaining_dice = 5
+                    Bot_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p1_throw[0]) +
@@ -122,6 +123,7 @@ while game_on:
                     Bot_hand.status = False
                     Bot_hand.point = 0
                     Bot_hand.remaining_dice = 5
+                    p1_hand.status = True
                     print("Damn. Unlucky throw. Neither a 1 or a 5. Your turn.\n")
                 else:
                     print("I got " + str(
@@ -197,10 +199,12 @@ while game_on:
 
     # 2 giocatori umani 1 vs 1
     elif players_number == 2:
+        print("OK! Game on.\n")
         player1 = Player(0, True, False)
         player2 = Player(0, False, False)
         p1_hand = Hand(5, 0, True)
         p2_hand = Hand(5, 0, False)
+        sleep(1)
 
         while not player1.game_status and not player2.game_status:
 
@@ -221,6 +225,7 @@ while game_on:
                     p1_hand.status = False
                     p1_hand.point = 0
                     p1_hand.remaining_dice = 5
+                    p2_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p1_throw[0]) +
@@ -269,6 +274,7 @@ while game_on:
                     p2_hand.status = False
                     p2_hand.point = 0
                     p2_hand.remaining_dice = 5
+                    p1_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p2_throw[0]) +
@@ -335,12 +341,14 @@ while game_on:
 
     # 3 giocatori umani 1 vs 1 vs 1
     elif players_number == 3:
+        print("OK! Game on.\n")
         player1 = Player(0, True, False)
         player2 = Player(0, False, False)
         player3 = Player(0, False, False)
         p1_hand = Hand(5, 0, True)
         p2_hand = Hand(5, 0, False)
         p3_hand = Hand(5, 0, False)
+        sleep(1)
 
         while not player1.game_status and not player2.game_status:
 
@@ -361,6 +369,7 @@ while game_on:
                     p1_hand.status = False
                     p1_hand.point = 0
                     p1_hand.remaining_dice = 5
+                    p2_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p1_throw[0]) +
@@ -411,6 +420,7 @@ while game_on:
                     p2_hand.status = False
                     p2_hand.point = 0
                     p2_hand.remaining_dice = 5
+                    p3_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p2_throw[0]) +
@@ -461,6 +471,7 @@ while game_on:
                     p3_hand.status = False
                     p3_hand.point = 0
                     p3_hand.remaining_dice = 5
+                    p1_hand.status = True
                     print("Sorry, no 1 and no 5. You loose the hand.\n")
                 else:
                     print("You got " + str(p3_throw[0]) +
